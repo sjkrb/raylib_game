@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/nobunaga/programming/Game/raylib/build",
+  "command": "/usr/bin/g++ -g -std=gnu++17 -o CMakeFiles/myGame.dir/main.cpp.o -c /home/nobunaga/programming/Game/raylib/main.cpp",
+  "file": "/home/nobunaga/programming/Game/raylib/main.cpp"
+},
+{
+  "directory": "/home/nobunaga/programming/Game/raylib/build",
+  "command": "/usr/bin/g++ -g -o Test/CMakeFiles/raylib_test.dir/test.cpp.o -c /home/nobunaga/programming/Game/raylib/Test/test.cpp",
+  "file": "/home/nobunaga/programming/Game/raylib/Test/test.cpp"
+}
+]

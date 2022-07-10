@@ -1,0 +1,8 @@
+# ninja log v5
+1	4	0	clean	a31eedcededa8236
+1	467	1657470827947705151	CMakeFiles/myGame.dir/main.cpp.o	7994962fd03dcc9e
+1	83	1657469134234369511	raylibTest	992a034d4071dc8c
+1	342	1657465194944364157	CMakeFiles/raylibTest.dir/main.cpp.o	2dccdf139eb30de9
+2	1211	1657465426034364466	Test/CMakeFiles/tests.dir/test.cpp.o	565aba8e78ee21f2
+2	1195	1657471994304373398	Test/CMakeFiles/raylib_test.dir/test.cpp.o	35f5a33acb88456
+467	538	1657470828017705152	myGame	5db242aed4e68225
