@@ -13,7 +13,7 @@ void changeRectYPos(bool result, int &rectYpos)
 
 bool isColided(int xpos, int ypos, int rectYpos, int rectXpos)
 {
-    if (contain({rectYpos - 10, rectYpos + 10}, ypos) && contain({rectXpos - 10, rectXpos + 10}, xpos))
+    if (contain({rectYpos - 20, rectYpos}, ypos) && contain({rectXpos - 10, rectXpos + 20 + 10}, xpos))
         return true;
     return false;
 }
