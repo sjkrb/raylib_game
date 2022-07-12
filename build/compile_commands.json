@@ -1,12 +1,17 @@
 [
 {
   "directory": "/home/nobunaga/programming/Game/raylib/build",
-  "command": "/usr/bin/g++ -g -std=gnu++17 -o CMakeFiles/myGame.dir/main.cpp.o -c /home/nobunaga/programming/Game/raylib/main.cpp",
+  "command": "/usr/bin/g++ -g -o CMakeFiles/structure.dir/structure.cpp.o -c /home/nobunaga/programming/Game/raylib/structure.cpp",
+  "file": "/home/nobunaga/programming/Game/raylib/structure.cpp"
+},
+{
+  "directory": "/home/nobunaga/programming/Game/raylib/build",
+  "command": "/usr/bin/g++ -I/home/nobunaga/programming/Game/raylib -g -std=gnu++17 -o CMakeFiles/myGame.dir/main.cpp.o -c /home/nobunaga/programming/Game/raylib/main.cpp",
   "file": "/home/nobunaga/programming/Game/raylib/main.cpp"
 },
 {
   "directory": "/home/nobunaga/programming/Game/raylib/build",
-  "command": "/usr/bin/g++ -g -o Test/CMakeFiles/raylib_test.dir/test.cpp.o -c /home/nobunaga/programming/Game/raylib/Test/test.cpp",
+  "command": "/usr/bin/g++ -I/home/nobunaga/programming/Game/raylib/Test/.. -g -o Test/CMakeFiles/tester.dir/test.cpp.o -c /home/nobunaga/programming/Game/raylib/Test/test.cpp",
   "file": "/home/nobunaga/programming/Game/raylib/Test/test.cpp"
 }
 ]

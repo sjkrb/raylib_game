@@ -1,13 +1,6 @@
-add_executable(raylib_test test.cpp)
-
-target_link_libraries(raylib_test gtest gtest_main)
-
-# add_test(
-#   NAME
-#     tests
-#   COMMAND
-#     $<TARGET_FILE:raylib_test>
-# )
-
-include(GoogleTest)
-gtest_discover_tests(raylib_test)
+file(GLOB SRCS *.cpp)
+add_executable(tester test.cpp)
+include_directories(../)
+target_link_libraries(tester structure gtest gtest_main)
+include(CTest)
+add_test(NAME onlytest COMMAND tester)

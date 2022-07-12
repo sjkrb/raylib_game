@@ -1,5 +1,0 @@
-if(EXISTS "/home/nobunaga/programming/Game/raylib/build/Test/test[1]_tests.cmake")
-  include("/home/nobunaga/programming/Game/raylib/build/Test/test[1]_tests.cmake")
-else()
-  add_test(test_NOT_BUILT test_NOT_BUILT)
-endif()

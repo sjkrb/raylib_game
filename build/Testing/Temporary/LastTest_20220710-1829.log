@@ -1,0 +1,49 @@
+Start testing: Jul 10 23:01 +0430
+----------------------------------------------------------
+1/1 Testing: onlytest
+1/1 Test: onlytest
+Command: "/home/nobunaga/programming/Game/raylib/build/Test/tester"
+Directory: /home/nobunaga/programming/Game/raylib/build/Test
+"onlytest" start time: Jul 10 23:01 +0430
+Output:
+----------------------------------------------------------
+INFO: Initializing raylib 4.0
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 1920 x 1080
+INFO:     > Screen size:  400 x 300
+INFO:     > Render size:  400 x 300
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 355
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA GeForce GTX 750 Ti/PCIe/SSE2
+INFO:     > Version:  3.3.0 NVIDIA 515.57
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+INFO: TEXTURE: [ID 2] Unloaded texture data from VRAM (GPU)
+INFO: SHADER: [ID 3] Default shader unloaded successfully
+INFO: TEXTURE: [ID 1] Default texture unloaded successfully
+INFO: Window closed successfully
+<end of output>
+Test time =   3.52 sec
+----------------------------------------------------------
+Test Passed.
+"onlytest" end time: Jul 10 23:02 +0430
+"onlytest" time elapsed: 00:00:03
+----------------------------------------------------------
+
+End testing: Jul 10 23:02 +0430

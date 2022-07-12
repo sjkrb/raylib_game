@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-g++"
+	BuildStamp="20220710-1829-Experimental"
+	Name="nobunaga"
+	Generator="ctest-3.23.2"
+	CompilerName="/usr/bin/g++"
+	CompilerVersion="12.1.0"
+	OSName="Linux"
+	Hostname="nobunaga"
+	OSRelease="5.18.9-arch1-1"
+	OSVersion="#1 SMP PREEMPT_DYNAMIC Sat, 02 Jul 2022 21:03:06 +0000"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="94"
+	ProcessorCacheSize="8192"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="0"
+	TotalPhysicalMemory="15852"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="3555.99"
+	>
+	<Testing>
+		<StartDateTime>Jul 10 23:01 +0430</StartDateTime>
+		<StartTestTime>1657477916</StartTestTime>
+		<TestList>
+			<Test>./Test/onlytest</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>onlytest</Name>
+			<Path>./Test</Path>
+			<FullName>./Test/onlytest</FullName>
+			<FullCommandLine>/home/nobunaga/programming/Game/raylib/build/Test/tester</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>3.5192</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/nobunaga/programming/Game/raylib/build/Test/tester</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyVk1GPmkAQx9/9FPPYJg2CSM7y0IQKUhJyZ4RebBofVhh1E2DJ7uJpcx++g8JVG3t35WmW/f1ndv6zG93PHlyIKq45K/gvXm1BsmPB1zA2zEF02vWjZB57PyjAPc8QeE9jDqrJMlRq0xTFscPb7wv4XNUFO4IizAXr88iEA1jmxLyikkwiVh0EY7OFbPOaWWCVo3ydeeT4VAupQWw2CrVywfwEPRLGnu/CQ41VGAMeNFaKi0pBIVh+u4UwdiFp6jYjAReSTDSVdsF2nAuyy5z37myELJkm3r0+I/UhZLu6f4z8yIOpkFThRN5oGAntwBBnQlLqMF3CnWNCyofzaYTDJAlGf5WQ7TlpaRu2YfZ6x3IM5+6KDOMkPsdEvoB7zmC6pS7LmhcoL3r0l+nptySnyBJNnjQUk3mdSxdskE5Hw8CbvkuQBsv0+yJw4Wfkg7WC9AzeGg58sA4WPMNiEk6+TrwJhRaUvC5ZrT7+I52PG9YUuq//ysyTb54fLF6EZCVpQO1Ye/k6R94UjlYwk2xbYqX/V2qvYC7FVrKyV77vrPafJt/ULeJ2Pt2DWjOd7QzDGKQ7BBpN+3hAU6xPcaPrRsMTU7RXin2bkFft/db0IDLEXJ3hHUl3oshbtWWOxrA+UgJj8BtQ/FyC====</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Jul 10 23:02 +0430</EndDateTime>
+		<EndTestTime>1657477920</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

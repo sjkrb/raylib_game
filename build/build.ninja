@@ -41,17 +41,49 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /home/nobunaga/programming/Game/raylib/build/
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target structure
+
+
+#############################################
+# Order-only phony target for structure
+
+build cmake_object_order_depends_target_structure: phony || CMakeFiles/structure.dir
+
+build CMakeFiles/structure.dir/structure.cpp.o: CXX_COMPILER__structure_Debug /home/nobunaga/programming/Game/raylib/structure.cpp || cmake_object_order_depends_target_structure
+  DEP_FILE = CMakeFiles/structure.dir/structure.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/structure.dir
+  OBJECT_FILE_DIR = CMakeFiles/structure.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target structure
+
+
+#############################################
+# Link the static library libstructure.a
+
+build libstructure.a: CXX_STATIC_LIBRARY_LINKER__structure_Debug CMakeFiles/structure.dir/structure.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles/structure.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = libstructure.a
+  TARGET_PDB = structure.a.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target myGame
 
 
 #############################################
 # Order-only phony target for myGame
 
-build cmake_object_order_depends_target_myGame: phony || CMakeFiles/myGame.dir
+build cmake_object_order_depends_target_myGame: phony || cmake_object_order_depends_target_structure
 
 build CMakeFiles/myGame.dir/main.cpp.o: CXX_COMPILER__myGame_Debug /home/nobunaga/programming/Game/raylib/main.cpp || cmake_object_order_depends_target_myGame
   DEP_FILE = CMakeFiles/myGame.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17
+  INCLUDES = -I/home/nobunaga/programming/Game/raylib
   OBJECT_DIR = CMakeFiles/myGame.dir
   OBJECT_FILE_DIR = CMakeFiles/myGame.dir
 
@@ -63,183 +95,15 @@ build CMakeFiles/myGame.dir/main.cpp.o: CXX_COMPILER__myGame_Debug /home/nobunag
 #############################################
 # Link the executable myGame
 
-build myGame: CXX_EXECUTABLE_LINKER__myGame_Debug CMakeFiles/myGame.dir/main.cpp.o
+build myGame: CXX_EXECUTABLE_LINKER__myGame_Debug CMakeFiles/myGame.dir/main.cpp.o | libstructure.a || libstructure.a
   FLAGS = -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lraylib  -lgtest  -lgtest_main
+  LINK_LIBRARIES = -lraylib  libstructure.a
   OBJECT_DIR = CMakeFiles/myGame.dir
   POST_BUILD = :
   PRE_LINK = :
   TARGET_FILE = myGame
   TARGET_PDB = myGame.dbg
-
-
-#############################################
-# Utility command for Experimental
-
-build Experimental: phony CMakeFiles/Experimental
-
-
-#############################################
-# Utility command for Nightly
-
-build Nightly: phony CMakeFiles/Nightly
-
-
-#############################################
-# Utility command for Continuous
-
-build Continuous: phony CMakeFiles/Continuous
-
-
-#############################################
-# Utility command for NightlyMemoryCheck
-
-build NightlyMemoryCheck: phony CMakeFiles/NightlyMemoryCheck
-
-
-#############################################
-# Utility command for NightlyStart
-
-build NightlyStart: phony CMakeFiles/NightlyStart
-
-
-#############################################
-# Utility command for NightlyUpdate
-
-build NightlyUpdate: phony CMakeFiles/NightlyUpdate
-
-
-#############################################
-# Utility command for NightlyConfigure
-
-build NightlyConfigure: phony CMakeFiles/NightlyConfigure
-
-
-#############################################
-# Utility command for NightlyBuild
-
-build NightlyBuild: phony CMakeFiles/NightlyBuild
-
-
-#############################################
-# Utility command for NightlyTest
-
-build NightlyTest: phony CMakeFiles/NightlyTest
-
-
-#############################################
-# Utility command for NightlyCoverage
-
-build NightlyCoverage: phony CMakeFiles/NightlyCoverage
-
-
-#############################################
-# Utility command for NightlyMemCheck
-
-build NightlyMemCheck: phony CMakeFiles/NightlyMemCheck
-
-
-#############################################
-# Utility command for NightlySubmit
-
-build NightlySubmit: phony CMakeFiles/NightlySubmit
-
-
-#############################################
-# Utility command for ExperimentalStart
-
-build ExperimentalStart: phony CMakeFiles/ExperimentalStart
-
-
-#############################################
-# Utility command for ExperimentalUpdate
-
-build ExperimentalUpdate: phony CMakeFiles/ExperimentalUpdate
-
-
-#############################################
-# Utility command for ExperimentalConfigure
-
-build ExperimentalConfigure: phony CMakeFiles/ExperimentalConfigure
-
-
-#############################################
-# Utility command for ExperimentalBuild
-
-build ExperimentalBuild: phony CMakeFiles/ExperimentalBuild
-
-
-#############################################
-# Utility command for ExperimentalTest
-
-build ExperimentalTest: phony CMakeFiles/ExperimentalTest
-
-
-#############################################
-# Utility command for ExperimentalCoverage
-
-build ExperimentalCoverage: phony CMakeFiles/ExperimentalCoverage
-
-
-#############################################
-# Utility command for ExperimentalMemCheck
-
-build ExperimentalMemCheck: phony CMakeFiles/ExperimentalMemCheck
-
-
-#############################################
-# Utility command for ExperimentalSubmit
-
-build ExperimentalSubmit: phony CMakeFiles/ExperimentalSubmit
-
-
-#############################################
-# Utility command for ContinuousStart
-
-build ContinuousStart: phony CMakeFiles/ContinuousStart
-
-
-#############################################
-# Utility command for ContinuousUpdate
-
-build ContinuousUpdate: phony CMakeFiles/ContinuousUpdate
-
-
-#############################################
-# Utility command for ContinuousConfigure
-
-build ContinuousConfigure: phony CMakeFiles/ContinuousConfigure
-
-
-#############################################
-# Utility command for ContinuousBuild
-
-build ContinuousBuild: phony CMakeFiles/ContinuousBuild
-
-
-#############################################
-# Utility command for ContinuousTest
-
-build ContinuousTest: phony CMakeFiles/ContinuousTest
-
-
-#############################################
-# Utility command for ContinuousCoverage
-
-build ContinuousCoverage: phony CMakeFiles/ContinuousCoverage
-
-
-#############################################
-# Utility command for ContinuousMemCheck
-
-build ContinuousMemCheck: phony CMakeFiles/ContinuousMemCheck
-
-
-#############################################
-# Utility command for ContinuousSubmit
-
-build ContinuousSubmit: phony CMakeFiles/ContinuousSubmit
 
 
 #############################################
@@ -301,268 +165,212 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
-
-#############################################
-# Custom command for CMakeFiles/Experimental
-
-build CMakeFiles/Experimental | ${cmake_ninja_workdir}CMakeFiles/Experimental: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D Experimental
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/Nightly
-
-build CMakeFiles/Nightly | ${cmake_ninja_workdir}CMakeFiles/Nightly: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D Nightly
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/Continuous
-
-build CMakeFiles/Continuous | ${cmake_ninja_workdir}CMakeFiles/Continuous: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D Continuous
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/NightlyMemoryCheck
-
-build CMakeFiles/NightlyMemoryCheck | ${cmake_ninja_workdir}CMakeFiles/NightlyMemoryCheck: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D NightlyMemoryCheck
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/NightlyStart
-
-build CMakeFiles/NightlyStart | ${cmake_ninja_workdir}CMakeFiles/NightlyStart: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D NightlyStart
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/NightlyUpdate
-
-build CMakeFiles/NightlyUpdate | ${cmake_ninja_workdir}CMakeFiles/NightlyUpdate: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D NightlyUpdate
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/NightlyConfigure
-
-build CMakeFiles/NightlyConfigure | ${cmake_ninja_workdir}CMakeFiles/NightlyConfigure: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D NightlyConfigure
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/NightlyBuild
-
-build CMakeFiles/NightlyBuild | ${cmake_ninja_workdir}CMakeFiles/NightlyBuild: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D NightlyBuild
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/NightlyTest
-
-build CMakeFiles/NightlyTest | ${cmake_ninja_workdir}CMakeFiles/NightlyTest: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D NightlyTest
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/NightlyCoverage
-
-build CMakeFiles/NightlyCoverage | ${cmake_ninja_workdir}CMakeFiles/NightlyCoverage: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D NightlyCoverage
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/NightlyMemCheck
-
-build CMakeFiles/NightlyMemCheck | ${cmake_ninja_workdir}CMakeFiles/NightlyMemCheck: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D NightlyMemCheck
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/NightlySubmit
-
-build CMakeFiles/NightlySubmit | ${cmake_ninja_workdir}CMakeFiles/NightlySubmit: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D NightlySubmit
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ExperimentalStart
-
-build CMakeFiles/ExperimentalStart | ${cmake_ninja_workdir}CMakeFiles/ExperimentalStart: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ExperimentalStart
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ExperimentalUpdate
-
-build CMakeFiles/ExperimentalUpdate | ${cmake_ninja_workdir}CMakeFiles/ExperimentalUpdate: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ExperimentalUpdate
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ExperimentalConfigure
-
-build CMakeFiles/ExperimentalConfigure | ${cmake_ninja_workdir}CMakeFiles/ExperimentalConfigure: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ExperimentalConfigure
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ExperimentalBuild
-
-build CMakeFiles/ExperimentalBuild | ${cmake_ninja_workdir}CMakeFiles/ExperimentalBuild: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ExperimentalBuild
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ExperimentalTest
-
-build CMakeFiles/ExperimentalTest | ${cmake_ninja_workdir}CMakeFiles/ExperimentalTest: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ExperimentalTest
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ExperimentalCoverage
-
-build CMakeFiles/ExperimentalCoverage | ${cmake_ninja_workdir}CMakeFiles/ExperimentalCoverage: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ExperimentalCoverage
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ExperimentalMemCheck
-
-build CMakeFiles/ExperimentalMemCheck | ${cmake_ninja_workdir}CMakeFiles/ExperimentalMemCheck: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ExperimentalMemCheck
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ExperimentalSubmit
-
-build CMakeFiles/ExperimentalSubmit | ${cmake_ninja_workdir}CMakeFiles/ExperimentalSubmit: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ExperimentalSubmit
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ContinuousStart
-
-build CMakeFiles/ContinuousStart | ${cmake_ninja_workdir}CMakeFiles/ContinuousStart: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ContinuousStart
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ContinuousUpdate
-
-build CMakeFiles/ContinuousUpdate | ${cmake_ninja_workdir}CMakeFiles/ContinuousUpdate: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ContinuousUpdate
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ContinuousConfigure
-
-build CMakeFiles/ContinuousConfigure | ${cmake_ninja_workdir}CMakeFiles/ContinuousConfigure: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ContinuousConfigure
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ContinuousBuild
-
-build CMakeFiles/ContinuousBuild | ${cmake_ninja_workdir}CMakeFiles/ContinuousBuild: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ContinuousBuild
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ContinuousTest
-
-build CMakeFiles/ContinuousTest | ${cmake_ninja_workdir}CMakeFiles/ContinuousTest: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ContinuousTest
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ContinuousCoverage
-
-build CMakeFiles/ContinuousCoverage | ${cmake_ninja_workdir}CMakeFiles/ContinuousCoverage: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ContinuousCoverage
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ContinuousMemCheck
-
-build CMakeFiles/ContinuousMemCheck | ${cmake_ninja_workdir}CMakeFiles/ContinuousMemCheck: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ContinuousMemCheck
-  pool = console
-
-
-#############################################
-# Custom command for CMakeFiles/ContinuousSubmit
-
-build CMakeFiles/ContinuousSubmit | ${cmake_ninja_workdir}CMakeFiles/ContinuousSubmit: CUSTOM_COMMAND
-  COMMAND = cd /home/nobunaga/programming/Game/raylib/build && /usr/bin/ctest -D ContinuousSubmit
-  pool = console
-
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
 # /home/nobunaga/programming/Game/raylib/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target raylib_test
+# Object build statements for EXECUTABLE target tester
 
 
 #############################################
-# Order-only phony target for raylib_test
+# Order-only phony target for tester
 
-build cmake_object_order_depends_target_raylib_test: phony || Test/CMakeFiles/raylib_test.dir
+build cmake_object_order_depends_target_tester: phony || cmake_object_order_depends_target_structure
 
-build Test/CMakeFiles/raylib_test.dir/test.cpp.o: CXX_COMPILER__raylib_test_Debug /home/nobunaga/programming/Game/raylib/Test/test.cpp || cmake_object_order_depends_target_raylib_test
-  DEP_FILE = Test/CMakeFiles/raylib_test.dir/test.cpp.o.d
+build Test/CMakeFiles/tester.dir/test.cpp.o: CXX_COMPILER__tester_Debug /home/nobunaga/programming/Game/raylib/Test/test.cpp || cmake_object_order_depends_target_tester
+  DEP_FILE = Test/CMakeFiles/tester.dir/test.cpp.o.d
   FLAGS = -g
-  OBJECT_DIR = Test/CMakeFiles/raylib_test.dir
-  OBJECT_FILE_DIR = Test/CMakeFiles/raylib_test.dir
+  INCLUDES = -I/home/nobunaga/programming/Game/raylib/Test/..
+  OBJECT_DIR = Test/CMakeFiles/tester.dir
+  OBJECT_FILE_DIR = Test/CMakeFiles/tester.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target raylib_test
+# Link build statements for EXECUTABLE target tester
 
 
 #############################################
-# Link the executable Test/raylib_test
+# Link the executable Test/tester
 
-build Test/raylib_test Test/raylib_test[1]_tests.cmake | ${cmake_ninja_workdir}Test/raylib_test[1]_tests.cmake: CXX_EXECUTABLE_LINKER__raylib_test_Debug Test/CMakeFiles/raylib_test.dir/test.cpp.o
+build Test/tester: CXX_EXECUTABLE_LINKER__tester_Debug Test/CMakeFiles/tester.dir/test.cpp.o | libstructure.a || libstructure.a
   FLAGS = -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lgtest  -lgtest_main
-  OBJECT_DIR = Test/CMakeFiles/raylib_test.dir
-  POST_BUILD = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/cmake -D TEST_TARGET=raylib_test -D TEST_EXECUTABLE=/home/nobunaga/programming/Game/raylib/build/Test/raylib_test -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/nobunaga/programming/Game/raylib/build/Test -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=raylib_test_TESTS -D CTEST_FILE=/home/nobunaga/programming/Game/raylib/build/Test/raylib_test[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake/Modules/GoogleTestAddTests.cmake
+  LINK_LIBRARIES = libstructure.a  -lgtest  -lgtest_main
+  OBJECT_DIR = Test/CMakeFiles/tester.dir
+  POST_BUILD = :
   PRE_LINK = :
-  RESTAT = 1
-  TARGET_FILE = Test/raylib_test
-  TARGET_PDB = raylib_test.dbg
+  TARGET_FILE = Test/tester
+  TARGET_PDB = tester.dbg
+
+
+#############################################
+# Utility command for Experimental
+
+build Test/Experimental: phony Test/CMakeFiles/Experimental
+
+
+#############################################
+# Utility command for Nightly
+
+build Test/Nightly: phony Test/CMakeFiles/Nightly
+
+
+#############################################
+# Utility command for Continuous
+
+build Test/Continuous: phony Test/CMakeFiles/Continuous
+
+
+#############################################
+# Utility command for NightlyMemoryCheck
+
+build Test/NightlyMemoryCheck: phony Test/CMakeFiles/NightlyMemoryCheck
+
+
+#############################################
+# Utility command for NightlyStart
+
+build Test/NightlyStart: phony Test/CMakeFiles/NightlyStart
+
+
+#############################################
+# Utility command for NightlyUpdate
+
+build Test/NightlyUpdate: phony Test/CMakeFiles/NightlyUpdate
+
+
+#############################################
+# Utility command for NightlyConfigure
+
+build Test/NightlyConfigure: phony Test/CMakeFiles/NightlyConfigure
+
+
+#############################################
+# Utility command for NightlyBuild
+
+build Test/NightlyBuild: phony Test/CMakeFiles/NightlyBuild
+
+
+#############################################
+# Utility command for NightlyTest
+
+build Test/NightlyTest: phony Test/CMakeFiles/NightlyTest
+
+
+#############################################
+# Utility command for NightlyCoverage
+
+build Test/NightlyCoverage: phony Test/CMakeFiles/NightlyCoverage
+
+
+#############################################
+# Utility command for NightlyMemCheck
+
+build Test/NightlyMemCheck: phony Test/CMakeFiles/NightlyMemCheck
+
+
+#############################################
+# Utility command for NightlySubmit
+
+build Test/NightlySubmit: phony Test/CMakeFiles/NightlySubmit
+
+
+#############################################
+# Utility command for ExperimentalStart
+
+build Test/ExperimentalStart: phony Test/CMakeFiles/ExperimentalStart
+
+
+#############################################
+# Utility command for ExperimentalUpdate
+
+build Test/ExperimentalUpdate: phony Test/CMakeFiles/ExperimentalUpdate
+
+
+#############################################
+# Utility command for ExperimentalConfigure
+
+build Test/ExperimentalConfigure: phony Test/CMakeFiles/ExperimentalConfigure
+
+
+#############################################
+# Utility command for ExperimentalBuild
+
+build Test/ExperimentalBuild: phony Test/CMakeFiles/ExperimentalBuild
+
+
+#############################################
+# Utility command for ExperimentalTest
+
+build Test/ExperimentalTest: phony Test/CMakeFiles/ExperimentalTest
+
+
+#############################################
+# Utility command for ExperimentalCoverage
+
+build Test/ExperimentalCoverage: phony Test/CMakeFiles/ExperimentalCoverage
+
+
+#############################################
+# Utility command for ExperimentalMemCheck
+
+build Test/ExperimentalMemCheck: phony Test/CMakeFiles/ExperimentalMemCheck
+
+
+#############################################
+# Utility command for ExperimentalSubmit
+
+build Test/ExperimentalSubmit: phony Test/CMakeFiles/ExperimentalSubmit
+
+
+#############################################
+# Utility command for ContinuousStart
+
+build Test/ContinuousStart: phony Test/CMakeFiles/ContinuousStart
+
+
+#############################################
+# Utility command for ContinuousUpdate
+
+build Test/ContinuousUpdate: phony Test/CMakeFiles/ContinuousUpdate
+
+
+#############################################
+# Utility command for ContinuousConfigure
+
+build Test/ContinuousConfigure: phony Test/CMakeFiles/ContinuousConfigure
+
+
+#############################################
+# Utility command for ContinuousBuild
+
+build Test/ContinuousBuild: phony Test/CMakeFiles/ContinuousBuild
+
+
+#############################################
+# Utility command for ContinuousTest
+
+build Test/ContinuousTest: phony Test/CMakeFiles/ContinuousTest
+
+
+#############################################
+# Utility command for ContinuousCoverage
+
+build Test/ContinuousCoverage: phony Test/CMakeFiles/ContinuousCoverage
+
+
+#############################################
+# Utility command for ContinuousMemCheck
+
+build Test/ContinuousMemCheck: phony Test/CMakeFiles/ContinuousMemCheck
+
+
+#############################################
+# Utility command for ContinuousSubmit
+
+build Test/ContinuousSubmit: phony Test/CMakeFiles/ContinuousSubmit
 
 
 #############################################
@@ -624,10 +432,292 @@ build Test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build Test/rebuild_cache: phony Test/CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Custom command for Test/CMakeFiles/Experimental
+
+build Test/CMakeFiles/Experimental | ${cmake_ninja_workdir}Test/CMakeFiles/Experimental: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D Experimental
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/Nightly
+
+build Test/CMakeFiles/Nightly | ${cmake_ninja_workdir}Test/CMakeFiles/Nightly: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D Nightly
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/Continuous
+
+build Test/CMakeFiles/Continuous | ${cmake_ninja_workdir}Test/CMakeFiles/Continuous: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D Continuous
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/NightlyMemoryCheck
+
+build Test/CMakeFiles/NightlyMemoryCheck | ${cmake_ninja_workdir}Test/CMakeFiles/NightlyMemoryCheck: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D NightlyMemoryCheck
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/NightlyStart
+
+build Test/CMakeFiles/NightlyStart | ${cmake_ninja_workdir}Test/CMakeFiles/NightlyStart: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D NightlyStart
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/NightlyUpdate
+
+build Test/CMakeFiles/NightlyUpdate | ${cmake_ninja_workdir}Test/CMakeFiles/NightlyUpdate: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D NightlyUpdate
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/NightlyConfigure
+
+build Test/CMakeFiles/NightlyConfigure | ${cmake_ninja_workdir}Test/CMakeFiles/NightlyConfigure: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D NightlyConfigure
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/NightlyBuild
+
+build Test/CMakeFiles/NightlyBuild | ${cmake_ninja_workdir}Test/CMakeFiles/NightlyBuild: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D NightlyBuild
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/NightlyTest
+
+build Test/CMakeFiles/NightlyTest | ${cmake_ninja_workdir}Test/CMakeFiles/NightlyTest: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D NightlyTest
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/NightlyCoverage
+
+build Test/CMakeFiles/NightlyCoverage | ${cmake_ninja_workdir}Test/CMakeFiles/NightlyCoverage: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D NightlyCoverage
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/NightlyMemCheck
+
+build Test/CMakeFiles/NightlyMemCheck | ${cmake_ninja_workdir}Test/CMakeFiles/NightlyMemCheck: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D NightlyMemCheck
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/NightlySubmit
+
+build Test/CMakeFiles/NightlySubmit | ${cmake_ninja_workdir}Test/CMakeFiles/NightlySubmit: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D NightlySubmit
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ExperimentalStart
+
+build Test/CMakeFiles/ExperimentalStart | ${cmake_ninja_workdir}Test/CMakeFiles/ExperimentalStart: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ExperimentalStart
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ExperimentalUpdate
+
+build Test/CMakeFiles/ExperimentalUpdate | ${cmake_ninja_workdir}Test/CMakeFiles/ExperimentalUpdate: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ExperimentalUpdate
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ExperimentalConfigure
+
+build Test/CMakeFiles/ExperimentalConfigure | ${cmake_ninja_workdir}Test/CMakeFiles/ExperimentalConfigure: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ExperimentalConfigure
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ExperimentalBuild
+
+build Test/CMakeFiles/ExperimentalBuild | ${cmake_ninja_workdir}Test/CMakeFiles/ExperimentalBuild: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ExperimentalBuild
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ExperimentalTest
+
+build Test/CMakeFiles/ExperimentalTest | ${cmake_ninja_workdir}Test/CMakeFiles/ExperimentalTest: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ExperimentalTest
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ExperimentalCoverage
+
+build Test/CMakeFiles/ExperimentalCoverage | ${cmake_ninja_workdir}Test/CMakeFiles/ExperimentalCoverage: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ExperimentalCoverage
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ExperimentalMemCheck
+
+build Test/CMakeFiles/ExperimentalMemCheck | ${cmake_ninja_workdir}Test/CMakeFiles/ExperimentalMemCheck: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ExperimentalMemCheck
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ExperimentalSubmit
+
+build Test/CMakeFiles/ExperimentalSubmit | ${cmake_ninja_workdir}Test/CMakeFiles/ExperimentalSubmit: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ExperimentalSubmit
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ContinuousStart
+
+build Test/CMakeFiles/ContinuousStart | ${cmake_ninja_workdir}Test/CMakeFiles/ContinuousStart: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ContinuousStart
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ContinuousUpdate
+
+build Test/CMakeFiles/ContinuousUpdate | ${cmake_ninja_workdir}Test/CMakeFiles/ContinuousUpdate: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ContinuousUpdate
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ContinuousConfigure
+
+build Test/CMakeFiles/ContinuousConfigure | ${cmake_ninja_workdir}Test/CMakeFiles/ContinuousConfigure: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ContinuousConfigure
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ContinuousBuild
+
+build Test/CMakeFiles/ContinuousBuild | ${cmake_ninja_workdir}Test/CMakeFiles/ContinuousBuild: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ContinuousBuild
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ContinuousTest
+
+build Test/CMakeFiles/ContinuousTest | ${cmake_ninja_workdir}Test/CMakeFiles/ContinuousTest: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ContinuousTest
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ContinuousCoverage
+
+build Test/CMakeFiles/ContinuousCoverage | ${cmake_ninja_workdir}Test/CMakeFiles/ContinuousCoverage: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ContinuousCoverage
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ContinuousMemCheck
+
+build Test/CMakeFiles/ContinuousMemCheck | ${cmake_ninja_workdir}Test/CMakeFiles/ContinuousMemCheck: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ContinuousMemCheck
+  pool = console
+
+
+#############################################
+# Custom command for Test/CMakeFiles/ContinuousSubmit
+
+build Test/CMakeFiles/ContinuousSubmit | ${cmake_ninja_workdir}Test/CMakeFiles/ContinuousSubmit: CUSTOM_COMMAND
+  COMMAND = cd /home/nobunaga/programming/Game/raylib/build/Test && /usr/bin/ctest -D ContinuousSubmit
+  pool = console
+
 # =============================================================================
 # Target aliases.
 
-build raylib_test: phony Test/raylib_test
+build Continuous: phony Test/Continuous
+
+build ContinuousBuild: phony Test/ContinuousBuild
+
+build ContinuousConfigure: phony Test/ContinuousConfigure
+
+build ContinuousCoverage: phony Test/ContinuousCoverage
+
+build ContinuousMemCheck: phony Test/ContinuousMemCheck
+
+build ContinuousStart: phony Test/ContinuousStart
+
+build ContinuousSubmit: phony Test/ContinuousSubmit
+
+build ContinuousTest: phony Test/ContinuousTest
+
+build ContinuousUpdate: phony Test/ContinuousUpdate
+
+build Experimental: phony Test/Experimental
+
+build ExperimentalBuild: phony Test/ExperimentalBuild
+
+build ExperimentalConfigure: phony Test/ExperimentalConfigure
+
+build ExperimentalCoverage: phony Test/ExperimentalCoverage
+
+build ExperimentalMemCheck: phony Test/ExperimentalMemCheck
+
+build ExperimentalStart: phony Test/ExperimentalStart
+
+build ExperimentalSubmit: phony Test/ExperimentalSubmit
+
+build ExperimentalTest: phony Test/ExperimentalTest
+
+build ExperimentalUpdate: phony Test/ExperimentalUpdate
+
+build Nightly: phony Test/Nightly
+
+build NightlyBuild: phony Test/NightlyBuild
+
+build NightlyConfigure: phony Test/NightlyConfigure
+
+build NightlyCoverage: phony Test/NightlyCoverage
+
+build NightlyMemCheck: phony Test/NightlyMemCheck
+
+build NightlyMemoryCheck: phony Test/NightlyMemoryCheck
+
+build NightlyStart: phony Test/NightlyStart
+
+build NightlySubmit: phony Test/NightlySubmit
+
+build NightlyTest: phony Test/NightlyTest
+
+build NightlyUpdate: phony Test/NightlyUpdate
+
+build structure: phony libstructure.a
+
+build tester: phony Test/tester
 
 # =============================================================================
 # Folder targets.
@@ -637,14 +727,14 @@ build raylib_test: phony Test/raylib_test
 #############################################
 # Folder: /home/nobunaga/programming/Game/raylib/build
 
-build all: phony myGame Test/all
+build all: phony libstructure.a myGame Test/all
 
 # =============================================================================
 
 #############################################
 # Folder: /home/nobunaga/programming/Game/raylib/build/Test
 
-build Test/all: phony Test/raylib_test
+build Test/all: phony Test/tester
 
 # =============================================================================
 # Unknown Build Time Dependencies.
@@ -658,14 +748,14 @@ build Test/all: phony Test/raylib_test
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../Test/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CPack.cmake /usr/share/cmake/Modules/CPackComponent.cmake /usr/share/cmake/Modules/CTest.cmake /usr/share/cmake/Modules/CTestTargets.cmake /usr/share/cmake/Modules/CTestUseLaunchers.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/DartConfiguration.tcl.in /usr/share/cmake/Modules/GoogleTest.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake /usr/share/cmake/Templates/CPackConfig.cmake.in CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../Test/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CPack.cmake /usr/share/cmake/Modules/CPackComponent.cmake /usr/share/cmake/Modules/CTest.cmake /usr/share/cmake/Modules/CTestTargets.cmake /usr/share/cmake/Modules/CTestUseLaunchers.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/DartConfiguration.tcl.in /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake /usr/share/cmake/Templates/CPackConfig.cmake.in CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../Test/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CPack.cmake /usr/share/cmake/Modules/CPackComponent.cmake /usr/share/cmake/Modules/CTest.cmake /usr/share/cmake/Modules/CTestTargets.cmake /usr/share/cmake/Modules/CTestUseLaunchers.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/DartConfiguration.tcl.in /usr/share/cmake/Modules/GoogleTest.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake /usr/share/cmake/Templates/CPackConfig.cmake.in CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../Test/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CPack.cmake /usr/share/cmake/Modules/CPackComponent.cmake /usr/share/cmake/Modules/CTest.cmake /usr/share/cmake/Modules/CTestTargets.cmake /usr/share/cmake/Modules/CTestUseLaunchers.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/DartConfiguration.tcl.in /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake /usr/share/cmake/Templates/CPackConfig.cmake.in CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
 
 
 #############################################

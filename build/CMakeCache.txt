@@ -287,8 +287,8 @@ CTEST_SUBMIT_RETRY_DELAY:STRING=5
 //Maximum time allowed before CTest will kill the test.
 DART_TESTING_TIMEOUT:STRING=1500
 
-//The directory containing a CMake configuration file for GoogleTest.
-GoogleTest_DIR:PATH=GoogleTest_DIR-NOTFOUND
+//Path to a program.
+GITCOMMAND:FILEPATH=/usr/bin/git
 
 //Command to build the project
 MAKECOMMAND:STRING=/usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
@@ -299,14 +299,11 @@ MEMORYCHECK_COMMAND:FILEPATH=MEMORYCHECK_COMMAND-NOTFOUND
 //File that contains suppressions for the memory checker
 MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 
-//Arguments to supply to pkg-config
-PKG_CONFIG_ARGN:STRING=
-
-//pkg-config executable
-PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
-
 //Name of the computer/site where compile is being run
 SITE:STRING=nobunaga
+
+//Dependencies for the target
+gameLib_LIB_DEPENDS:STATIC=general;raylib;
 
 //Value Computed by CMake
 myGame_BINARY_DIR:STATIC=/home/nobunaga/programming/Game/raylib/build
@@ -316,21 +313,6 @@ myGame_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 myGame_SOURCE_DIR:STATIC=/home/nobunaga/programming/Game/raylib
-
-//Path to a library.
-pkgcfg_lib_GTEST_gtest:FILEPATH=/usr/lib/libgtest.so
-
-//Path to a library.
-pkgcfg_lib_GTEST_gtest_main:FILEPATH=/usr/lib/libgtest_main.so
-
-//Value Computed by CMake
-raylibTest_BINARY_DIR:STATIC=/home/nobunaga/programming/Game/raylib/build
-
-//Value Computed by CMake
-raylibTest_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-raylibTest_SOURCE_DIR:STATIC=/home/nobunaga/programming/Game/raylib
 
 
 ########################
@@ -522,59 +504,14 @@ CTEST_SUBMIT_RETRY_COUNT-ADVANCED:INTERNAL=1
 CTEST_SUBMIT_RETRY_DELAY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DART_TESTING_TIMEOUT
 DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
-//Details about finding PkgConfig
-FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v1.8.0()]
-GTEST_CFLAGS:INTERNAL=-DGTEST_HAS_PTHREAD=1
-GTEST_CFLAGS_I:INTERNAL=
-GTEST_CFLAGS_OTHER:INTERNAL=-DGTEST_HAS_PTHREAD=1
-GTEST_FOUND:INTERNAL=1
-GTEST_INCLUDEDIR:INTERNAL=/usr/include
-GTEST_INCLUDE_DIRS:INTERNAL=
-GTEST_LDFLAGS:INTERNAL=-L/usr/lib;-lgtest_main;-lgtest
-GTEST_LDFLAGS_OTHER:INTERNAL=
-GTEST_LIBDIR:INTERNAL=/usr/lib
-GTEST_LIBRARIES:INTERNAL=gtest_main;gtest
-GTEST_LIBRARY_DIRS:INTERNAL=/usr/lib
-GTEST_LIBS:INTERNAL=
-GTEST_LIBS_L:INTERNAL=
-GTEST_LIBS_OTHER:INTERNAL=
-GTEST_LIBS_PATHS:INTERNAL=
-GTEST_MODULE_NAME:INTERNAL=gtest_main
-GTEST_PREFIX:INTERNAL=
-GTEST_STATIC_CFLAGS:INTERNAL=-DGTEST_HAS_PTHREAD=1
-GTEST_STATIC_CFLAGS_I:INTERNAL=
-GTEST_STATIC_CFLAGS_OTHER:INTERNAL=-DGTEST_HAS_PTHREAD=1
-GTEST_STATIC_INCLUDE_DIRS:INTERNAL=
-GTEST_STATIC_LDFLAGS:INTERNAL=-L/usr/lib;-lgtest_main;-lgtest
-GTEST_STATIC_LDFLAGS_OTHER:INTERNAL=
-GTEST_STATIC_LIBDIR:INTERNAL=
-GTEST_STATIC_LIBRARIES:INTERNAL=gtest_main;gtest
-GTEST_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib
-GTEST_STATIC_LIBS:INTERNAL=
-GTEST_STATIC_LIBS_L:INTERNAL=
-GTEST_STATIC_LIBS_OTHER:INTERNAL=
-GTEST_STATIC_LIBS_PATHS:INTERNAL=
-GTEST_VERSION:INTERNAL=1.12.0
-GTEST_gtest_main_INCLUDEDIR:INTERNAL=
-GTEST_gtest_main_LIBDIR:INTERNAL=
-GTEST_gtest_main_PREFIX:INTERNAL=
-GTEST_gtest_main_VERSION:INTERNAL=
+//ADVANCED property for variable: GITCOMMAND
+GITCOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MAKECOMMAND
 MAKECOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_COMMAND
 MEMORYCHECK_COMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_SUPPRESSIONS_FILE
 MEMORYCHECK_SUPPRESSIONS_FILE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PKG_CONFIG_ARGN
-PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
-PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SITE
 SITE-ADVANCED:INTERNAL=1
-__pkg_config_checked_GTEST:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_GTEST_gtest
-pkgcfg_lib_GTEST_gtest-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_GTEST_gtest_main
-pkgcfg_lib_GTEST_gtest_main-ADVANCED:INTERNAL=1
-prefix_result:INTERNAL=/usr/lib
 
