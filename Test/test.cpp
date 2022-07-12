@@ -1,4 +1,4 @@
-#include "../structure.hpp"
+#include "../structure.h"
 #include <gtest/gtest.h>
 
 TEST(BaseTest, contain_test)

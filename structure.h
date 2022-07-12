@@ -26,5 +26,6 @@ namespace sajjad
 };
 
 bool contain(sajjad::Vector2<int> &&period, int number);
-void changeRectYPos(bool result, int &rectYpos);
+void changeRectYPos(bool result, int &rectYpos, int pace);
 bool isColided(int xpos, int ypos, int rectYpos, int rectXpos);
+int sigmoid(int x);

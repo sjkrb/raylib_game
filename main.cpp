@@ -1,5 +1,6 @@
-#include "structure.hpp"
+#include "structure.h"
 #include "raylib.h"
+#include <math.h>
 
 int main()
 {
@@ -53,7 +54,7 @@ int main()
             if (IsKeyDown(KEY_LEFT) && xpos >= 0)
                 xpos -= 5;
 
-            changeRectYPos(rectYpos <= height && rectYpos >= 0, rectYpos);
+            changeRectYPos(rectYpos <= height && rectYpos >= 0, rectYpos, sigmoid(count));
 
             DrawCircle(xpos, height / 2, 12, BLUE);
             DrawRectangle(width / 2, rectYpos, 20, 20, RED);
@@ -76,6 +77,7 @@ int main()
 
         ClearBackground(RAYWHITE);
         EndDrawing();
+
     }
     CloseWindow();
 
